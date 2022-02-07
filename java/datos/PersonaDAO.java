@@ -12,9 +12,10 @@ public class PersonaDAO {
    
     private static final String SQL_SELECT = "SELECT id_persona, nombre, apellido, email, telefono FROM test.persona";
     private static final String SQL_INSERT = "INSERT INTO test.persona(nombre, apellido, email, telefono) VALUES (?, ?, ?, ?) ";
-    private static final String SQL_UPDATE = "UPDATE test.persona SET (nombre, apellido, email, telefono) VALUES (?, ?, ?, ?) WHERE id_persona=?;";
+    private static final String SQL_UPDATE = "UPDATE test.persona SET nombre = ?, apellido = ?, email = ?, telefono = ? WHERE id_persona = ?;";
     private static final String SQL_DELETE = "DELETE FROM test.persona WHERE id_persona= ? ;";
-public List <Persona> seleccionar () {
+
+    public List <Persona> seleccionar () {
 
     Connection con = null;
     PreparedStatement stmt = null;
@@ -60,7 +61,6 @@ public int insertar (Persona persona) {
         //se asignan los valores
         con = getConnection();
         stmt = con.prepareStatement(SQL_INSERT);
-        
         stmt.setString(1, persona.getNombre());
         stmt.setString(2, persona.getApellido());
         stmt.setString(3, persona.getEmail());
