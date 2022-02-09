@@ -19,7 +19,7 @@ public class PersonaDAO {
     PreparedStatement stmt = null;
     ResultSet rs = null;
     Persona persona = null;
-    List <Persona> personas = new ArrayList<>();
+    List <Persona> personas = new ArrayList<Persona>();
     
         try {
             con = getConnection();
@@ -32,7 +32,12 @@ public class PersonaDAO {
                 String email = rs.getString("email");
                 String telefono = rs.getString("telefono");
 
-                persona = new Persona(idPersona, nombre, apellido, email, telefono);
+                persona = new Persona();
+                persona.setNombre(nombre);
+                persona.setApellido(apellido);
+                persona.SetEmail(email);
+                persona.SetEmail(telefono);
+                
                 personas.add(persona);
             }
 
@@ -64,7 +69,11 @@ public int insertar (Persona persona) {
         stmt.setString(3, persona.getEmail());
         stmt.setString(4, persona.getTelefono());
         //se ejecuta el update de la base de datos 
+        
+        System.out.println("Ejecutando query" + SQL_INSERT);
         registros =stmt.executeUpdate();
+        System.out.println("Registros afectados" + registros);
+        
     } catch (SQLException ex) {
         ex.printStackTrace(System.out);
     } finally {
@@ -93,6 +102,8 @@ public int actualizar (Persona persona) {
         stmt.setInt(5, persona.getIdPersona());
         
         actualizacion = stmt.executeUpdate();
+        System.out.println("Registros afectados" + actualizacion);
+        
     } catch (SQLException ex) {
         ex.printStackTrace(System.out);
     } finally {
@@ -118,6 +129,7 @@ public int eliminar (Persona persona) {
         stmt.setInt(1, persona.getIdPersona());
         
         borrar = stmt.executeUpdate();
+        System.out.println("Registros afectados" + borrar);
     } catch (SQLException ex) {
         ex.printStackTrace();
     } finally {

@@ -13,8 +13,9 @@ public class TestManejoPersonas {
 
         
               
-        Persona persona1 = new Persona ("Rubnn", "Yahns", "carl@gmail.com", "16776235");
-        personaDAO.insertar(persona1);
+        Persona persona1 = new Persona (1, "Julia", "Dart", "judar@gmail.com", "16776235");
+        personaDAO.actualizar(persona1);
+        
         /*
         
         //Insertando objeto en la base de datos       
@@ -31,10 +32,10 @@ public class TestManejoPersonas {
         */
 
         
-        List<Persona> personas = personaDAO.seleccionar();
-        personas.forEach (persona -> {
-        System.out.println("Persona: " + persona);
-        });
+        //List<Persona> personas = personaDAO.seleccionar();
+        //personas.forEach (persona -> {
+        //System.out.println("Persona: " + persona);
+        //});
 }
 
         
