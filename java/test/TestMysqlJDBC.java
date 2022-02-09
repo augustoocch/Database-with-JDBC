@@ -13,7 +13,7 @@ public class TestMysqlJDBC {
     
         try {
            // Class.forName("com.mysql.cj.jdbc.Driver"); /LINEA NO REQUERIDA EN ULTIMAS VERSIONES
-           Connection conexion = DriverManager.getConnection(url, "root", "Bigua205");
+           Connection conexion = DriverManager.getConnection(url, "root", "xxxxx");
            Statement instruccion = conexion.createStatement();
            //se da la instruccion
            var sql = "SELECT id_persona, nombre, apellido, email, telefono FROM persona";
