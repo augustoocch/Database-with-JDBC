@@ -12,9 +12,9 @@ public class TestManejoPersonas {
         //List<Persona> personas = personaDAO.seleccionar();
 
         
-        //Modificando objeto en la base de datos       
-        Persona persona1 = new Persona (11);
-        personaDAO.eliminar(persona1);
+              
+        Persona persona1 = new Persona ("Rubnn", "Yahns", "carl@gmail.com", "16776235");
+        personaDAO.insertar(persona1);
         /*
         
         //Insertando objeto en la base de datos       

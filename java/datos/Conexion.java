@@ -8,15 +8,15 @@ import java.util.logging.Logger;
 public class Conexion {
     
 private static final String JDBC_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-private static final String JBDC_USER = "root";
-private static final String JBDC_PASSWORD = "Bigua205";
+private static final String JDBC_USER = "root";
+private static final String JDBC_PASSWORD = "Bigua205";
 
 
 //SE CONECTA A LA BASE DE DATOS
 public static Connection getConnection () throws SQLException{
     
 
-       return DriverManager.getConnection(JDBC_URL, JBDC_USER, JBDC_PASSWORD);
+       return DriverManager.getConnection(JDBC_URL, JDBC_URL, JDBC_PASSWORD);
     }
 
 

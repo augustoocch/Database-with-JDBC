@@ -5,8 +5,6 @@ import java.util.List;
 import domain.*;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class PersonaDAO {
    
